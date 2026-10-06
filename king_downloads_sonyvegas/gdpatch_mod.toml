@@ -1,0 +1,13 @@
+# A unique ID for this mod. Mod IDs should use snake case (all lowercase, with spaces replaced with underscores).
+# This is the only required field in the mod info.
+id = "king_downloads_sonyvegas"
+
+# Optional metadata for the mod.
+# These fields are not used by GDPatch directly, but may be used by other mods (e.g. config UIs).
+# If you publish your mod online, we suggest making sure these values are in sync with your mod page.
+[meta]
+name = "The King Downloads Sony Vegas" # Pretty name for this mod.
+version = "1.0.0" # Version number. No strict format is imposed on this, but it should be obvious to users.
+authors = ["KittiBytes"] # A list of mod authors.
+description = "Mod that patches in 2 new sound effects to the keygen item in reference to an old YTP." # A short description of what this mod does.
+website = "https://github.com/kittibyte/AVS03Mods" # A link to a website (such as mod page or source code) for this mod.

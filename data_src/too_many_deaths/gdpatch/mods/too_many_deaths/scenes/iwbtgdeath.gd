@@ -9,7 +9,6 @@ const STAT_LIST_UID: String = "uid://b7q8ym7p8jnew"
 const CURSOR_SCENE_UID: String = "uid://bloqyq1l5lfnw"
 const EXIT_BLACKOUT_SEC: float = 0.55
 
-@onready var desat: ColorRect = $Desat
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var blackout: ColorRect = %Blackout
 
@@ -18,15 +17,15 @@ const EXIT_BLACKOUT_SEC: float = 0.55
 var stat_list: StatList
 var cursor: Cursor
 
-
 func _ready() -> void :
 	player.hide()
+	player.set_physics_process(false) # this prevents the player from moving after dying
 	emit_blood()
 	hide_vignette()
 	blackout.hide()
 	GameEvents.abort_fullscreen_queue(false)
 	GameEvents.set_mouse_confined(false)
-	GameEvents.pause_game(2.0)
+	GameEvents.pause_game(0.1) # setting this to 0 causes it to just not work for some reason so 0.1 will have to do
 
 	var round_manager: RoundManager = get_tree().get_first_node_in_group("round_manager")
 	var meta_earned: float = PolicyManager.apply_reward_multiplier(
@@ -41,6 +40,11 @@ func _ready() -> void :
 		return
 	animation_player.play("new_animation")
 
+func _process(delta: float) -> void:
+	# very aggressive way to make sure filter isnt happening
+	# as even tho stop music calls disabling it it gets reenabled sometimes anyways
+	if AudioServer.is_bus_effect_enabled(0, 0):
+		AudioServer.set_bus_effect_enabled(0, 0, false)
 
 func _input(event: InputEvent) -> void :
 	if not listening or event.is_echo() or GameEvents.returning_to_menu:
@@ -60,7 +64,6 @@ func _input(event: InputEvent) -> void :
 	if event.is_action_pressed("left_click") or event.is_action_pressed("close"):
 		on_quit_button_pressed()
 		get_viewport().set_input_as_handled()
-
 
 func toggle_stats() -> void :
 	if GameEvents.returning_to_menu:
@@ -100,14 +103,12 @@ func toggle_stats() -> void :
 	if is_instance_valid(stat_list) and is_instance_valid(cursor):
 		stat_list.enable_hovers(cursor)
 
-
 func wait_for_input_release() -> void :
 	if not is_inside_tree():
 		return
 	await get_tree().process_frame
 	while is_inside_tree() and (Input.is_action_pressed("left_click") or Input.is_action_pressed("close") or Input.is_action_pressed("tab")):
 		await get_tree().process_frame
-
 
 func on_quit_button_pressed() -> void :
 	if not listening or GameEvents.menu_return_started:
@@ -133,7 +134,6 @@ func stop_music() -> void :
 	MusicPlayer.halt()
 	AudioServer.set_bus_effect_enabled(0, 0, false)
 
-
 func hide_vignette() -> void :
 	var vignette: CanvasItem = get_tree().get_first_node_in_group("vignette") as CanvasItem
 	if vignette:
@@ -144,4 +144,3 @@ func emit_blood() -> void:
 		var blood: Object = Blood.instantiate()
 		blood.global_position = player.global_position
 		player.get_parent().add_child(blood)
-		print(player.global_position)

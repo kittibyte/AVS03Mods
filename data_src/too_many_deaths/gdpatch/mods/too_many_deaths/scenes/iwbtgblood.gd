@@ -14,6 +14,8 @@ var fall: float = 0.0
 # code is based on the iwbtg gamemaker remake
 # but also not really
 func _ready() -> void:
+	# pick random blood frame
+	frame = randi_range(0, 2)
 	# make it go in random directions just like the og game! weeeee
 	var dir: float = float(randi_range(0, 35) * 10)
 	var spd: float = randf_range(0.0, 6.0)

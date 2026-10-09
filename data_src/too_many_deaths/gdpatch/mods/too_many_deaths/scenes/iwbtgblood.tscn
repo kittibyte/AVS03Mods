@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d0g5ybcwvxijc"]
+
+[ext_resource type="Texture2D" uid="uid://n4ggsp460jf0" path="res://gdpatch/mods/too_many_deaths/assets/IWBTGBlood.png" id="1_42jxl"]
+[ext_resource type="Script" uid="uid://bif7q3w18c8r0" path="res://gdpatch/mods/too_many_deaths/scenes/iwbtgblood.gd" id="2_c67ei"]
+
+[node name="IWBTGBlood" type="Sprite2D" unique_id=158998502]
+process_mode = 3
+texture = ExtResource("1_42jxl")
+hframes = 3
+script = ExtResource("2_c67ei")

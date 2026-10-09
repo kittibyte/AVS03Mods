@@ -1,0 +1,13 @@
+# A unique ID for this mod. Mod IDs should use snake case (all lowercase, with spaces replaced with underscores).
+# This is the only required field in the mod info.
+id = "too_many_deaths"
+
+# Optional metadata for the mod.
+# These fields are not used by GDPatch directly, but may be used by other mods (e.g. config UIs).
+# If you publish your mod online, we suggest making sure these values are in sync with your mod page.
+[meta]
+name = "Example Mod" # Pretty name for this mod.
+version = "1.0.0" # Version number. No strict format is imposed on this, but it should be obvious to users.
+authors = ["You!"] # A list of mod authors.
+description = "Patches scripts versatilely." # A short description of what this mod does.
+website = "https://example.com/" # A link to a website (such as mod page or source code) for this mod.

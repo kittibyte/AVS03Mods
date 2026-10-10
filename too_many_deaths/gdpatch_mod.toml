@@ -6,8 +6,18 @@ id = "too_many_deaths"
 # These fields are not used by GDPatch directly, but may be used by other mods (e.g. config UIs).
 # If you publish your mod online, we suggest making sure these values are in sync with your mod page.
 [meta]
-name = "Example Mod" # Pretty name for this mod.
+name = "Too Many Deaths" # Pretty name for this mod.
 version = "1.0.0" # Version number. No strict format is imposed on this, but it should be obvious to users.
-authors = ["You!"] # A list of mod authors.
-description = "Patches scripts versatilely." # A short description of what this mod does.
-website = "https://example.com/" # A link to a website (such as mod page or source code) for this mod.
+authors = ["KittiBytes"] # A list of mod authors.
+description = "Many Deaths Screens, randomized too!" # A short description of what this mod does.
+website = "https://github.com/kittibyte/AVS03Mods/" # A link to a website (such as mod page or source code) for this mod.
+
+[config.death_screens.bluescreen]
+name = "Blue Screen"
+default = true
+type = "boolean"
+
+[config.death_screens.iwbtg]
+name = "I Wanna Be The Guy"
+default = true
+type = "boolean"

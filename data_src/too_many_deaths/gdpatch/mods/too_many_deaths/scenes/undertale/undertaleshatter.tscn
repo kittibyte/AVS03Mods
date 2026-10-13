@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cjmxnqi8k1fij"]
+
+[ext_resource type="Script" uid="uid://3gtiihbha7uk" path="res://gdpatch/mods/too_many_deaths/scenes/undertale/undertaleshatter.gd" id="1_o3c4n"]
+[ext_resource type="Texture2D" uid="uid://d355wldics5ul" path="res://gdpatch/mods/too_many_deaths/assets/undertale/cursorpieces.png" id="2_l17yi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttwyh"]
+atlas = ExtResource("2_l17yi")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rne1n"]
+atlas = ExtResource("2_l17yi")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w446j"]
+atlas = ExtResource("2_l17yi")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_whdba"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ttwyh")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_rne1n")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_w446j")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_rne1n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="UndertaleShatter" type="Node2D" unique_id=426490874]
+script = ExtResource("1_o3c4n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1149827023]
+sprite_frames = SubResource("SpriteFrames_whdba")
+autoplay = "default"

@@ -1,0 +1,235 @@
+[gd_scene format=3 uid="uid://dbkv1gsjwcinq"]
+
+[ext_resource type="Script" uid="uid://ejjfxbhe6pxi" path="res://gdpatch/mods/too_many_deaths/scenes/undertale/undertaledeath.gd" id="1_4w564"]
+[ext_resource type="Texture2D" uid="uid://vxre61vpys2i" path="res://gdpatch/mods/too_many_deaths/assets/undertale/cursorshatter.png" id="2_4mdk1"]
+[ext_resource type="AudioStream" uid="uid://b2jj2xn8idu5d" path="res://gdpatch/mods/too_many_deaths/assets/undertale/snd_break1.wav" id="3_4w564"]
+[ext_resource type="AudioStream" uid="uid://b5yi5omh3d17p" path="res://assets/audio/loopingfans.mp3" id="3_72g02"]
+[ext_resource type="Texture2D" uid="uid://mnfomsaxsphg" path="res://gdpatch/mods/too_many_deaths/assets/undertale/undertalegameover.png" id="3_avsm0"]
+[ext_resource type="FontFile" uid="uid://bwq8sqfq82hfd" path="res://gdpatch/mods/too_many_deaths/assets/undertale/8bitoperator_jve.ttf" id="4_64wid"]
+[ext_resource type="AudioStream" uid="uid://dk7jy0y07y06d" path="res://gdpatch/mods/too_many_deaths/assets/undertale/snd_break2.wav" id="5_72g02"]
+[ext_resource type="AudioStream" uid="uid://cm7heo5i1faho" path="res://gdpatch/mods/too_many_deaths/assets/undertale/mus_gameover.ogg" id="7_g8ap5"]
+
+[sub_resource type="Animation" id="Animation_minqy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:listening")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Break2:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOver:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Center:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8n4oq"]
+resource_name = "new_animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:listening")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"stop_music"
+}, {
+"args": [],
+"method": &"heart_kaboom"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Break2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.033333335, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameOver:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Center:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.9, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4r3p0"]
+_data = {
+&"RESET": SubResource("Animation_minqy"),
+&"new_animation": SubResource("Animation_8n4oq")
+}
+
+[node name="UndertaleDeath" type="Control" unique_id=555458976]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4w564")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=728202239]
+libraries/ = SubResource("AnimationLibrary_4r3p0")
+
+[node name="Black" type="ColorRect" parent="." unique_id=1096003669]
+custom_minimum_size = Vector2(768, 480)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -240.0
+offset_right = 384.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="CursorShatter" type="Sprite2D" parent="." unique_id=361645449]
+texture = ExtResource("2_4mdk1")
+
+[node name="Center" type="Control" parent="." unique_id=374643067]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = -320.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UndertaleGameover" type="Sprite2D" parent="Center" unique_id=1848499707]
+position = Vector2(320, 120)
+texture = ExtResource("3_avsm0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Center" unique_id=540313493]
+layout_mode = 0
+offset_top = 212.0
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5647059, 0.101960786, 0)
+theme_override_colors/font_shadow_color = Color(0.2509804, 0.7607843, 1, 0)
+theme_override_fonts/normal_font = ExtResource("4_64wid")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Press [img=32]res://resources/shortcuts/click_icon.tres[/img] to continue. [img=32]res://resources/shortcuts/tab_icon.tres[/img] for stats"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Blackout" type="ColorRect" parent="." unique_id=162237601]
+unique_name_in_owner = true
+visible = false
+z_index = 3025
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Fans" type="AudioStreamPlayer" parent="." unique_id=1496850498]
+stream = ExtResource("3_72g02")
+volume_db = -6.0
+autoplay = true
+bus = &"sfx"
+parameters/looping = true
+
+[node name="Break1" type="AudioStreamPlayer" parent="." unique_id=613525613]
+stream = ExtResource("3_4w564")
+autoplay = true
+bus = &"sfx"
+
+[node name="Break2" type="AudioStreamPlayer" parent="." unique_id=905564815]
+stream = ExtResource("5_72g02")
+bus = &"sfx"
+
+[node name="GameOver" type="AudioStreamPlayer" parent="." unique_id=1704959100]
+stream = ExtResource("7_g8ap5")
+bus = &"sfx"

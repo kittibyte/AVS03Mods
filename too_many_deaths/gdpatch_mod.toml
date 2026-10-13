@@ -21,3 +21,8 @@ type = "boolean"
 name = "I Wanna Be The Guy"
 default = true
 type = "boolean"
+
+[config.death_screens.undertale]
+name = "Undertale"
+default = true
+type = "boolean"

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cju551dy7gkbr"
-path="res://.godot/imported/splatter.wav-f5e548e134c83b3d4cd18dbc2edcbec5.sample"
+path="res://.godot/imported/splatter.wav-c877fc5fdfedcbf1c873f7b32e1bb741.sample"
 
 [deps]
 
-source_file="res://gdpatch/mods/too_many_deaths/assets/splatter.wav"
-dest_files=["res://.godot/imported/splatter.wav-f5e548e134c83b3d4cd18dbc2edcbec5.sample"]
+source_file="res://gdpatch/mods/too_many_deaths/assets/iwbtg/splatter.wav"
+dest_files=["res://.godot/imported/splatter.wav-c877fc5fdfedcbf1c873f7b32e1bb741.sample"]
 
 [params]
 

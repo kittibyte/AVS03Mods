@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dc6crongnexbc"]
 
-[ext_resource type="Script" uid="uid://6nsod126rtou" path="res://gdpatch/mods/too_many_deaths/scenes/iwbtgdeath.gd" id="1_kp8hf"]
+[ext_resource type="Script" uid="uid://6nsod126rtou" path="res://gdpatch/mods/too_many_deaths/scenes/iwbtg/iwbtgdeath.gd" id="1_kp8hf"]
 [ext_resource type="AudioStream" uid="uid://b5yi5omh3d17p" path="res://assets/audio/loopingfans.mp3" id="3_ip3wo"]
-[ext_resource type="Texture2D" uid="uid://crjra6b1u7nsj" path="res://gdpatch/mods/too_many_deaths/assets/IWBTGGameover.png" id="3_kp8hf"]
-[ext_resource type="AudioStream" uid="uid://bj2ta6jq3bvlt" path="res://gdpatch/mods/too_many_deaths/assets/28.ogg" id="4_eqjs0"]
-[ext_resource type="AudioStream" uid="uid://cju551dy7gkbr" path="res://gdpatch/mods/too_many_deaths/assets/splatter.wav" id="6_qxia8"]
+[ext_resource type="Texture2D" uid="uid://crjra6b1u7nsj" path="res://gdpatch/mods/too_many_deaths/assets/iwbtg/IWBTGGameover.png" id="3_kp8hf"]
+[ext_resource type="AudioStream" uid="uid://bj2ta6jq3bvlt" path="res://gdpatch/mods/too_many_deaths/assets/iwbtg/28.ogg" id="4_eqjs0"]
+[ext_resource type="AudioStream" uid="uid://cju551dy7gkbr" path="res://gdpatch/mods/too_many_deaths/assets/iwbtg/splatter.wav" id="6_qxia8"]
 
 [sub_resource type="Animation" id="Animation_minqy"]
 length = 0.001

@@ -19,7 +19,9 @@ return src:gsub(
 	if GDPatch.get_config_option("too_many_deaths", "death_screens", "bluescreen"):
 		deaths_array.append("uid://ccrqllopuays2")
 	if GDPatch.get_config_option("too_many_deaths", "death_screens", "iwbtg"):
-		deaths_array.append("res://gdpatch/mods/too_many_deaths/scenes/iwbtgdeath.tscn")]], true)
+		deaths_array.append("res://gdpatch/mods/too_many_deaths/scenes/iwbtg/iwbtgdeath.tscn")
+	if GDPatch.get_config_option("too_many_deaths", "death_screens", "undertale"):
+		deaths_array.append("res://gdpatch/mods/too_many_deaths/scenes/undertale/undertaledeath.tscn")]], true)
 	)
 end)
 

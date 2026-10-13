@@ -3,7 +3,7 @@ extends Control
 class_name IWBTGDeath
 
 @onready var player: Node = get_tree().root.get_node("Main/Entities/Player")
-@onready var Blood: PackedScene = preload("res://gdpatch/mods/too_many_deaths/scenes/iwbtgblood.tscn")
+@onready var Blood: PackedScene = preload("res://gdpatch/mods/too_many_deaths/scenes/iwbtg/iwbtgblood.tscn")
 
 const STAT_LIST_UID: String = "uid://b7q8ym7p8jnew"
 const CURSOR_SCENE_UID: String = "uid://bloqyq1l5lfnw"

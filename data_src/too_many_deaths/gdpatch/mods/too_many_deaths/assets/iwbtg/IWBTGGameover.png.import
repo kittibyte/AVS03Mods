@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n4ggsp460jf0"
-path="res://.godot/imported/IWBTGBlood.png-66644fb6e8cd923d37b5d4b42a373bf3.ctex"
+uid="uid://crjra6b1u7nsj"
+path="res://.godot/imported/IWBTGGameover.png-bf6f4d81a98efdf0f6a3206a487d497a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gdpatch/mods/too_many_deaths/assets/IWBTGBlood.png"
-dest_files=["res://.godot/imported/IWBTGBlood.png-66644fb6e8cd923d37b5d4b42a373bf3.ctex"]
+source_file="res://gdpatch/mods/too_many_deaths/assets/iwbtg/IWBTGGameover.png"
+dest_files=["res://.godot/imported/IWBTGGameover.png-bf6f4d81a98efdf0f6a3206a487d497a.ctex"]
 
 [params]
 

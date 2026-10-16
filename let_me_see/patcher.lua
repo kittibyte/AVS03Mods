@@ -19,7 +19,7 @@ return src:gsub(
 	else:
 		var holder: Node2D = Node2D.new()
 		holder.name = "AlphaHolder"
-		holder.modulate.a = 0.5
+		holder.modulate.a = alpha
 		holder.add_to_group("alpha_holder")
 		move_to_parent(holder, parent)
 		move_to_parent(effect, holder)]], true)

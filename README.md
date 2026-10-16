@@ -1,2 +1,2 @@
 # AVS03Mods
-mostly joke mods made for [antivirus survivors 2003](https://store.steampowered.com/app/3832490/Antivirus_Survivors_2003_Professional/) professional using [gdpatch](https://gdpatch.dev)
+mods i made for [antivirus survivors 2003 professional](https://store.steampowered.com/app/3832490/Antivirus_Survivors_2003_Professional/) using [gdpatch](https://gdpatch.dev) ranging from usual to just shitposts

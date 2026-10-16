@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vxre61vpys2i"
-path="res://.godot/imported/cursorshatter.png-f3fe724f1b6817d7cd2073c749b3d437.ctex"
+uid="uid://q5gxy2qfak3a"
+path="res://.godot/imported/cursorpiecesthread.png-f369007be96bdd323153648e43bcb560.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gdpatch/mods/too_many_deaths/assets/undertale/cursorshatter.png"
-dest_files=["res://.godot/imported/cursorshatter.png-f3fe724f1b6817d7cd2073c749b3d437.ctex"]
+source_file="res://gdpatch/mods/too_many_deaths/assets/undertale/cursorpiecesthread.png"
+dest_files=["res://.godot/imported/cursorpiecesthread.png-f369007be96bdd323153648e43bcb560.ctex"]
 
 [params]
 

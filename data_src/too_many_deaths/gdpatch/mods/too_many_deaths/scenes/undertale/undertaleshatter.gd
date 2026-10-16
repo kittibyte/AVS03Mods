@@ -3,6 +3,7 @@ extends Node2D
 var velocity: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
+	$AnimatedSprite2D.animation = GameEvents.picked_class.id
 	var rad: float = deg_to_rad(randf() * 360.0)
 	velocity = Vector2(cos(rad), -sin(rad)) * 7.0 * 30.0
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d355wldics5ul"
-path="res://.godot/imported/cursorpieces.png-c222517f38e9bf12781e97b69e7b318f.ctex"
+uid="uid://b3ljm8cd7ukqy"
+path="res://.godot/imported/cursorpiecesbrick.png-66827ef0c45dc687c09f6df2b1473bea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gdpatch/mods/too_many_deaths/assets/undertale/cursorpieces.png"
-dest_files=["res://.godot/imported/cursorpieces.png-c222517f38e9bf12781e97b69e7b318f.ctex"]
+source_file="res://gdpatch/mods/too_many_deaths/assets/undertale/cursorpiecesbrick.png"
+dest_files=["res://.godot/imported/cursorpiecesbrick.png-66827ef0c45dc687c09f6df2b1473bea.ctex"]
 
 [params]
 

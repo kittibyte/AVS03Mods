@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dbkv1gsjwcinq"]
 
 [ext_resource type="Script" uid="uid://ejjfxbhe6pxi" path="res://gdpatch/mods/too_many_deaths/scenes/undertale/undertaledeath.gd" id="1_4w564"]
-[ext_resource type="Texture2D" uid="uid://vxre61vpys2i" path="res://gdpatch/mods/too_many_deaths/assets/undertale/cursorshatter.png" id="2_4mdk1"]
+[ext_resource type="Texture2D" uid="uid://bsyaio37kxys" path="res://gdpatch/mods/too_many_deaths/assets/undertale/cursorshatterdefault.png" id="2_64wid"]
 [ext_resource type="AudioStream" uid="uid://b2jj2xn8idu5d" path="res://gdpatch/mods/too_many_deaths/assets/undertale/snd_break1.wav" id="3_4w564"]
 [ext_resource type="AudioStream" uid="uid://b5yi5omh3d17p" path="res://assets/audio/loopingfans.mp3" id="3_72g02"]
 [ext_resource type="Texture2D" uid="uid://mnfomsaxsphg" path="res://gdpatch/mods/too_many_deaths/assets/undertale/undertalegameover.png" id="3_avsm0"]
@@ -166,7 +166,7 @@ size_flags_vertical = 4
 color = Color(0, 0, 0, 1)
 
 [node name="CursorShatter" type="Sprite2D" parent="." unique_id=361645449]
-texture = ExtResource("2_4mdk1")
+texture = ExtResource("2_64wid")
 
 [node name="Center" type="Control" parent="." unique_id=374643067]
 modulate = Color(1, 1, 1, 0)

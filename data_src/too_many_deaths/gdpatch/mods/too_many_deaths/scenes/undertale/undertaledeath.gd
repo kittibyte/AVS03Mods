@@ -6,6 +6,16 @@ class_name UndertaleDeath
 @onready var cursor_shatter: Node = $CursorShatter
 @onready var cursor_shard: PackedScene = preload("res://gdpatch/mods/too_many_deaths/scenes/undertale/undertaleshatter.tscn")
 
+const shatter_texutures: Dictionary = {
+	"default": preload("res://gdpatch/mods/too_many_deaths/assets/undertale/cursorshatterdefault.png"),
+	"brick": preload("res://gdpatch/mods/too_many_deaths/assets/undertale/cursorshatterbrick.png"),
+	"vector": preload("res://gdpatch/mods/too_many_deaths/assets/undertale/cursorshattervector.png"),
+	"null": preload("res://gdpatch/mods/too_many_deaths/assets/undertale/cursorshatternull.png"),
+	"breakpoint": preload("res://gdpatch/mods/too_many_deaths/assets/undertale/cursorshatterbreakpoint.png"),
+	"thread": preload("res://gdpatch/mods/too_many_deaths/assets/undertale/cursorshatterthread.png"),
+	"admin": preload("res://gdpatch/mods/too_many_deaths/assets/undertale/cursorshatteradmin.png")
+}
+
 const STAT_LIST_UID: String = "uid://b7q8ym7p8jnew"
 const CURSOR_SCENE_UID: String = "uid://bloqyq1l5lfnw"
 const EXIT_BLACKOUT_SEC: float = 0.55
@@ -22,8 +32,8 @@ var cursor: Cursor
 
 var player_pos: Vector2
 
-
 func _ready() -> void :
+	cursor_shatter.texture = shatter_texutures[GameEvents.picked_class.id]
 	hide_vignette()
 	player.set_physics_process(false) # this prevents the player from moving after dying
 	player_pos = get_viewport().get_canvas_transform() * player.global_position
@@ -46,13 +56,11 @@ func _ready() -> void :
 		return
 	animation_player.play("new_animation")
 
-
 func _process(_delta: float) -> void :
 	# very aggressive way to make sure filter isnt happening
 	# as even tho stop music calls disabling it it gets reenabled sometimes anyways
 	if AudioServer.is_bus_effect_enabled(0, 0):
 		AudioServer.set_bus_effect_enabled(0, 0, false)
-
 
 func _input(event: InputEvent) -> void :
 	if not listening or event.is_echo() or GameEvents.returning_to_menu:
@@ -72,7 +80,6 @@ func _input(event: InputEvent) -> void :
 	if event.is_action_pressed("left_click") or event.is_action_pressed("close"):
 		on_quit_button_pressed()
 		get_viewport().set_input_as_handled()
-
 
 func toggle_stats() -> void :
 	if GameEvents.returning_to_menu:
@@ -112,14 +119,12 @@ func toggle_stats() -> void :
 	if is_instance_valid(stat_list) and is_instance_valid(cursor):
 		stat_list.enable_hovers(cursor)
 
-
 func wait_for_input_release() -> void :
 	if not is_inside_tree():
 		return
 	await get_tree().process_frame
 	while is_inside_tree() and (Input.is_action_pressed("left_click") or Input.is_action_pressed("close") or Input.is_action_pressed("tab")):
 		await get_tree().process_frame
-
 
 func on_quit_button_pressed() -> void :
 	if not listening or GameEvents.menu_return_started:
@@ -141,11 +146,9 @@ func on_quit_button_pressed() -> void :
 	print("return_to_menu: bluescreen")
 	GameEvents.return_to_main_menu(false, EXIT_BLACKOUT_SEC)
 
-
 func stop_music() -> void :
 	MusicPlayer.halt()
 	AudioServer.set_bus_effect_enabled(0, 0, false)
-
 
 func hide_vignette() -> void :
 	var vignette: CanvasItem = get_tree().get_first_node_in_group("vignette") as CanvasItem
